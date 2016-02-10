@@ -765,6 +765,21 @@ public class BridJDeclarationsConverter extends DeclarationsConverter {
         if (conv.byValue) {
             convDecl.addAnnotation(new Annotation(result.config.runtime.typeRef(JNAeratorConfig.Runtime.Ann.ByValue)));
         }
+        for (Modifier m: mutatedType.getModifiers()){
+            if (m.equals(ModifierType.Unsigned)){
+                convDecl.addAnnotation(new Annotation(result.config.runtime.typeRef(JNAeratorConfig.Runtime.Ann.Unsigned)));
+                break;
+            }
+        }
+        if (conv.arrayLengths != null) {
+            try {
+                convDecl.addAnnotation(new Annotation(result.config.runtime.typeRef(JNAeratorConfig.Runtime.Ann.CType), expr(((ArrayRef) mutatedType).getTarget().toString())));
+            } catch (Exception e){
+                convDecl.addAnnotation(new Annotation(result.config.runtime.typeRef(JNAeratorConfig.Runtime.Ann.CType), expr(mutatedType.toString())));
+            }
+        } else {
+            convDecl.addAnnotation(new Annotation(result.config.runtime.typeRef(JNAeratorConfig.Runtime.Ann.CType), expr(mutatedType.toString())));
+        }
 
         for (Element e : toImportDetailsFrom) {
             convDecl.importDetails(e, false);

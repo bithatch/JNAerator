@@ -220,7 +220,9 @@ public class JNAeratorConfig {
             Union,
             Virtual,
             Constructor,
-            IID
+            IID,
+            Unsigned,
+            CType
         }
 
         Runtime(boolean hasFastStructs,
