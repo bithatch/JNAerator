@@ -1,26 +1,29 @@
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.nativelibs4java</groupId>
 	<artifactId>anarres-jnaerator</artifactId>
 	<name>Anarres JCPP (with JNAerator modifications)</name>
-	<url>http://www.anarres.org/projects/jcpp/</url>
+	<url>https://github.com/bithatch/JNAerator</url>
 	<version>1.2.10-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<description></description>
 
 	<parent>
-		<groupId>com.nativelibs4java</groupId>
-		<artifactId>nativelibs4java-parent</artifactId>
-		<version>1.10-SNAPSHOT</version>
+		<groupId>uk.co.bithatch</groupId>
+		<artifactId>jnaerator-parent</artifactId>
+		<version>0.13-SNAPSHOT</version>
+		<relativePath>..</relativePath>
 	</parent>
-	
+
+
 	<properties>
 		<mainClass>org.anarres.cpp.Main</mainClass>
-	    <maven.compiler.source>1.6</maven.compiler.source>
-	    <maven.compiler.target>1.6</maven.compiler.target>
+		<maven.compiler.source>1.6</maven.compiler.source>
+		<maven.compiler.target>1.6</maven.compiler.target>
 	</properties>
-	
+
 	<developers>
 		<developer>
 			<id>anarres.author</id>
@@ -40,12 +43,12 @@
 	</licenses>
 
 	<dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.12</version>
-      <scope>test</scope>
-    </dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
 		<dependency>
 			<groupId>gnu.getopt</groupId>
 			<artifactId>java-getopt</artifactId>
@@ -69,9 +72,8 @@
 			<plugin>
 				<groupId>com.nativelibs4java</groupId>
 				<artifactId>maven-velocity-plugin</artifactId>
-        <version>0.8</version>
 			</plugin>
-			
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
@@ -87,21 +89,13 @@
 			</plugin>
 
 			<plugin>
-			    <groupId>org.apache.maven.plugins</groupId>
-			    <artifactId>maven-compiler-plugin</artifactId>
-			    <configuration>
-			        <source>1.6</source>
-			        <target>1.6</target>
-			    </configuration>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
 			</plugin>
 
 			<plugin>
-			    <groupId>org.apache.maven.plugins</groupId>
-			    <artifactId>maven-javadoc-plugin</artifactId>
-			    <configuration>
-			        <source>1.6</source>
-			        <target>1.6</target>
-			    </configuration>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
 			</plugin>
 		</plugins>
 	</build>

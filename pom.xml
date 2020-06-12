@@ -1,69 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>com.nativelibs4java</groupId>
-    <artifactId>jnaerator-parent</artifactId>
-	  <version>0.13-SNAPSHOT</version>
-    <packaging>pom</packaging>
-    <inceptionYear>2009</inceptionYear>
-    <name>JNAerator Parent Project</name>
-	
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>uk.co.bithatch</groupId>
+	<artifactId>jnaerator-parent</artifactId>
+	<version>0.13-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<inceptionYear>2009</inceptionYear>
+	<name>JNAerator Parent Project</name>
+
 	<parent>
 		<groupId>com.nativelibs4java</groupId>
 		<artifactId>nativelibs4java-parent</artifactId>
-    <version>1.10-SNAPSHOT</version>
+		<version>1.10-SNAPSHOT</version>
 	</parent>
 
-  <properties>
-    <bridj.version>0.7.1-SNAPSHOT</bridj.version>
-    <jna.version>4.1.0</jna.version>
-    <rococoa.version>0.5</rococoa.version>
-  </properties>
-  
-  <scm>
-    <connection>scm:git:git@github.com:nativelibs4java/JNAerator.git</connection>
-    <developerConnection>scm:git:git@github.com:nativelibs4java/JNAerator.git</developerConnection>
-    <url>http://github.com/nativelibs4java/JNAerator</url>
-  </scm>
+	<properties>
+		<bridj.version>0.7.1-SNAPSHOT</bridj.version>
+		<jna.version>4.1.0</jna.version>
+		<rococoa.version>0.5</rococoa.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
 
-  <repositories>
-    <repository>
-      <id>sonatype</id>
-      <name>Sonatype OSS Snapshots Repository</name>
-      <url>http://oss.sonatype.org/content/groups/public</url>
-    </repository>
-  </repositories>
+	<url>https://github.com/bithatch/JNAerator</url>
 
-  <pluginRepositories>
-    <pluginRepository>
-      <id>sonatype</id>
-      <name>Sonatype OSS Snapshots Repository</name>
-      <url>http://oss.sonatype.org/content/groups/public</url>
-    </pluginRepository>
-  </pluginRepositories>
-  
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.12</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
-  
+	<scm>
+		<url>https://github.com/bithatch/JNAerator</url>
+		<connection>scm:git:https://github.com/bithatch/JNAerator.git</connection>
+		<developerConnection>scm:git:https://github.com/bithatch/JNAerator.git</developerConnection>
+	</scm>
+
+	<developers>
+		<!-- I just cherry picked commits from various forks and republished to 
+			Maven central. See upstream for original authors. -->
+		<developer>
+			<id>brett</id>
+			<name>Brett Smith</name>
+			<email>tanktarta@gmail.com</email>
+		</developer>
+	</developers>
+	<organization>
+		<name>Bithatch</name>
+		<url>http://bithatch.co.uk</url>
+	</organization>
+
+	<distributionManagement>
+		<snapshotRepository>
+			<id>ossrh-bithatch</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+		<repository>
+			<id>ossrh-bithatch</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
+	</distributionManagement>
+
+	<repositories>
+		<repository>
+			<id>sonatype</id>
+			<name>Sonatype OSS Snapshots Repository</name>
+			<url>http://oss.sonatype.org/content/groups/public</url>
+		</repository>
+	</repositories>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>sonatype</id>
+			<name>Sonatype OSS Snapshots Repository</name>
+			<url>http://oss.sonatype.org/content/groups/public</url>
+		</pluginRepository>
+	</pluginRepositories>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
 	<modules>
-		<module>anarres</module>
-		<!--module>jcpp</module-->
+		<!-- <module>anarres</module> -->
+		<!--module>jcpp</module -->
 		<module>ochafik-util</module>
 		<module>ochafik-swing</module>
 		<module>jnaerator-runtime</module>
 		<module>jnaerator-rococoa-runtime</module>
 		<module>jnaerator-parser</module>
-		
+
 		<module>maven-jnaerator-plugin</module>
 		<module>jnaerator</module>
 	</modules>
-	
+
 	<licenses>
 		<license>
 			<name>LGPL 2.1</name>
@@ -72,7 +102,7 @@
 			<comments></comments>
 		</license>
 	</licenses>
-	
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -121,42 +151,39 @@
 				<classifier>shaded</classifier>
 				<version>${project.version}</version>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>com.nativelibs4java</groupId>
 				<artifactId>bridj</artifactId>
-        <version>${bridj.version}</version>
+				<version>${bridj.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>net.java.dev.jna</groupId>
 				<artifactId>jna</artifactId>
-        <version>${jna.version}</version>
+				<version>${jna.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.rococoa</groupId>
 				<artifactId>rococoa-core</artifactId>
-        <version>${rococoa.version}</version>
+				<version>${rococoa.version}</version>
 			</dependency>
-      <dependency>
-        <groupId>org.antlr</groupId>
-        <artifactId>antlr-runtime</artifactId>
-        <version>3.5.2</version>
-      </dependency>
-      <dependency>
-        <groupId>com.nativelibs4java</groupId>
-        <artifactId>jalico</artifactId>
-        <version>0.12-SNAPSHOT</version>
-      </dependency>
+			<dependency>
+				<groupId>org.antlr</groupId>
+				<artifactId>antlr-runtime</artifactId>
+				<version>3.5.2</version>
+			</dependency>
+			<dependency>
+				<groupId>com.nativelibs4java</groupId>
+				<artifactId>jalico</artifactId>
+				<version>0.12-SNAPSHOT</version>
+			</dependency>
 			<dependency>
 				<groupId>com.nativelibs4java</groupId>
 				<artifactId>anarres-jnaerator</artifactId>
 				<version>1.2.10-SNAPSHOT</version>
 			</dependency>
-			<!-- <dependency>
-				<groupId>org.anarres</groupId>
-				<artifactId>cpp</artifactId>
-				<version>1.2.9-SNAPSHOT</version>
-			</dependency> -->
+			<!-- <dependency> <groupId>org.anarres</groupId> <artifactId>cpp</artifactId> 
+				<version>1.2.9-SNAPSHOT</version> </dependency> -->
 			<dependency>
 				<groupId>org.eclipse.jdt.core.compiler</groupId>
 				<artifactId>ecj</artifactId>
@@ -164,7 +191,7 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-	
+
 	<build>
 		<pluginManagement>
 			<plugins>
@@ -180,7 +207,120 @@
 						</execution>
 					</executions>
 				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-source-plugin</artifactId>
+					<version>3.0.1</version>
+					<executions>
+						<execution>
+							<id>attach-sources</id>
+							<goals>
+								<goal>jar</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+
+				<!-- JavaDoc Plugin -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-javadoc-plugin</artifactId>
+					<version>3.2.0</version>
+					<executions>
+						<execution>
+							<id>release</id>
+							<phase>package</phase>
+							<goals>
+								<goal>jar</goal>
+							</goals>
+						</execution>
+						<execution>
+							<id>attach-javadocs</id>
+							<goals>
+								<goal>jar</goal>
+							</goals>
+						</execution>
+					</executions>
+					<configuration>
+						<!-- <skip>true</skip> -->
+						<encoding>UTF-8</encoding>
+						<excludePackageNames>**.impl.*</excludePackageNames>
+						<!-- https://stackoverflow.com/questions/49472783/maven-is-unable-to-find-javadoc-command -->
+						<javadocExecutable>${java.home}/bin/javadoc</javadocExecutable>
+
+						<!-- https://bugs.openjdk.java.net/browse/JDK-8212233 -->
+						<source>8</source>
+					</configuration>
+				</plugin>
+
+				<!-- Maven Compiler Plugin -->
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.8.1</version>
+				</plugin>
+
+				<!-- Make this jar executable -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-jar-plugin</artifactId>
+					<version>3.2.0</version>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-gpg-plugin</artifactId>
+					<version>1.6</version>
+					<executions>
+						<execution>
+							<id>sign-artifacts</id>
+							<phase>verify</phase>
+							<goals>
+								<goal>sign</goal>
+							</goals>
+							<configuration>
+								<gpgArguments>
+									<arg>--pinentry-mode</arg>
+									<arg>loopback</arg>
+								</gpgArguments>
+							</configuration>
+						</execution>
+					</executions>
+				</plugin>
+
+				<plugin>
+					<groupId>org.sonatype.plugins</groupId>
+					<artifactId>nexus-staging-maven-plugin</artifactId>
+					<version>1.6.8</version>
+					<extensions>true</extensions>
+					<configuration>
+						<serverId>ossrh-bithatch</serverId>
+						<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+						<autoReleaseAfterClose>true</autoReleaseAfterClose>
+					</configuration>
+				</plugin>
 			</plugins>
 		</pluginManagement>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.2.0</version>
+				<configuration>
+					<target>8</target>
+					<source>8</source>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<target>8</target>
+					<source>8</source>
+				</configuration>
+			</plugin>
+		</plugins>
 	</build>
 </project>

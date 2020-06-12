@@ -1,47 +1,25 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
- <modelVersion>4.0.0</modelVersion>
-  <groupId>com.nativelibs4java</groupId>
-  <artifactId>ochafik-swing</artifactId>
-  <name>OChafik's Swing Utilities</name>
-  <url>http://ochafik.free.fr/blog/</url>
-  <packaging>jar</packaging>
-  
-  <parent>
-	  <groupId>com.nativelibs4java</groupId>
-	  <artifactId>jnaerator-parent</artifactId>
-	  <version>0.13-SNAPSHOT</version>
-	  <relativePath>..</relativePath>
-  </parent>
-  
-  <dependencies>
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>ochafik-swing</artifactId>
+	<name>OChafik's Swing Utilities</name>
+	<url>https://github.com/bithatch/JNAerator</url>
+	<packaging>jar</packaging>
+
+	<parent>
+		<groupId>uk.co.bithatch</groupId>
+		<artifactId>jnaerator-parent</artifactId>
+		<version>0.13-SNAPSHOT</version>
+		<relativePath>..</relativePath>
+	</parent>
+
+	<dependencies>
 		<dependency>
-		  <groupId>com.nativelibs4java</groupId>
-		  <artifactId>ochafik-util</artifactId>
+			<groupId>com.nativelibs4java</groupId>
+			<artifactId>ochafik-util</artifactId>
 		</dependency>
-  </dependencies>
-  
-  <build>
-  	<plugins>
-  		<plugin>
-		    <groupId>org.apache.maven.plugins</groupId>
-		    <artifactId>maven-compiler-plugin</artifactId>
-		    <configuration>
-		        <source>1.6</source>
-		        <target>1.6</target>
-		    </configuration>
-		</plugin>
-  		<plugin>
-		    <groupId>org.apache.maven.plugins</groupId>
-		    <artifactId>maven-javadoc-plugin</artifactId>
-		    <configuration>
-		        <source>1.6</source>
-		        <target>1.6</target>
-		    </configuration>
-		</plugin>
-	</plugins>
-  </build>
+	</dependencies>
 </project>
 
 
