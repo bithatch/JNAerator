@@ -2,3 +2,7 @@ target
 project/boot
 project/target
 *~
+**/.settings/
+**/*.project
+**/*.classpath
+
